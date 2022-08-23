@@ -59,8 +59,8 @@ SELECT * FROM submission;
 +-------+----------+---------+
 */
 --CREATING FORIEGN KEY
-ALTER TABLE submission ADD FORIEGN KEY (roll_no) REFERNCES name(roll_no);
-desc submisson;
+ALTER TABLE submission ADD FOREIGN KEY (roll_no) REFERENCES name(roll_no);
+desc submission;
 /*
 +----------+-------------+------+-----+---------+-------+
 | Field    | Type        | Null | Key | Default | Extra |
@@ -84,7 +84,7 @@ SELECT * FROM name,submission WHERE name.roll_no=submission.roll_no;
 +---------+-----------+-------+----------+---------+
 */
 --ACTUAL INNER JOIN SYNTAX
-SELECT * name JOIN submission ON name.roll_=submission.roll_no;
+SELECT * FROM name JOIN submission ON name.roll_no=submission.roll_no;
 /*
 +---------+-----------+-------+----------+---------+
 | roll_no | name      | sr_no | assgn_id | roll_no |
