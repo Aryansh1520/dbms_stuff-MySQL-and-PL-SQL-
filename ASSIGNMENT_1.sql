@@ -1,3 +1,21 @@
+/*
+OBJECTIVES ACHIEVED 
+CREATE
+SHOW
+INSERT
+UPDATE
+DELETE
+ALTER
+VIEW
+SELECT
+DROP
+
+CONSTRAINTS:
+NOT NULL
+DEFAULT
+AUTOINCREMENT (NOT IMPLEMENTED) CAN BE USED TO AUTO INCREMENT ROLL NUMBER
+*/
+
 --creating database
 CREATE DATABASE assignment_1;
 SHOW DATABASES;             --SHOWS ALL DATABASES
@@ -74,3 +92,57 @@ DELETE FROM a3_info WHERE surname = 'SHARMA';
 |      41 | KETAN     | CHAUDHARI |
 +---------+-----------+-----------+
 */
+
+--DROPPING A COLUMN
+ALTER TABLE a3_info DROP COLUMN surname;
+/*
++---------+-----------+
+| roll_no | name      |
++---------+-----------+
+|      37 | INDRANEEL |
+|      38 | SHUBHAM   |
+|      39 | AKSHAY    |
+|      40 | SAKSHI    |
+|      41 | KETAN     |
++---------+-----------+
+*/
+--ADDING A COLUMN
+ALTER TABLE a3_info ADD surname VARCHAR(30) DEFAULT = 'SURNAME DELETED';
+/*
++---------+-----------+-----------------+
+| roll_no | name      | surname         |
++---------+-----------+-----------------+
+|      37 | INDRANEEL | SURNAME DELETED |
+|      38 | SHUBHAM   | SURNAME DELETED |
+|      39 | AKSHAY    | SURNAME DELETED |
+|      40 | SAKSHI    | SURNAME DELETED |
+|      41 | KETAN     | SURNAME DELETED |
++---------+-----------+-----------------+
+*/
+--CREATING A VEIW (BASICALLY A VIRTUAL TABLE WHICH INHERITS COLUMNS FROM A TABLE ALREADY PRESENT)
+
+CREATE VIEW veiw_1 AS SELECT roll_no , name FROM a3_info; --(WHERE STATEMENT CAN BE USED HERE)
+
+SELECT * FROM veiw_1;
+/*
++---------+-----------+
+| roll_no | name      |
++---------+-----------+
+|      37 | INDRANEEL |
+|      38 | SHUBHAM   |
+|      39 | AKSHAY    |
+|      40 | SAKSHI    |
+|      41 | KETAN     |
++---------+-----------+
+*/
+SELECT roll_no FROM veiw_1 WHERE name = 'SAKSHI';
+/*
++---------+
+| roll_no |
++---------+
+|      40 |
++---------+
+*/
+
+
+
