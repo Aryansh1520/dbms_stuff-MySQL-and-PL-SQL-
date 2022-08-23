@@ -24,3 +24,8 @@ INSERT INTO table_name VALUES (val1, val2);
 
 --SELECTING ANYTHING 
 SELECT *(EVERYTHING) OR WHATEVER U WANNA SELECT FROM table_name WHERE (CONDITION); (WHERE IS OPTIONAL);
+
+--UPDATE ROW
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
