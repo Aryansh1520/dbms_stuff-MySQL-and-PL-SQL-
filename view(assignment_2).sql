@@ -1,3 +1,11 @@
+/*
+OBJECTIVES COMPLETED 
+CREATE VIEW 
+DISPLAY VIEW
+UPDATE 
+ALTER
+*/
+
 CREATE DATABASE view_1;
 USE view_1;
 CREATE TABLE a3_info(roll_no INT NOT NULL, name VARCHAR(30),cs_lang VARCHAR(30),PRIMARY KEY (roll_no));
@@ -18,8 +26,17 @@ SELECT * FROM a3_info;
 |      41 | KETAN     | REACT   |
 +---------+-----------+---------+
 */
-CREATE VIEW veiw_1 AS SELECT roll_no,cs_lang FROM a3_info;
-SELECT * FROM veiw_1;
+CREATE VIEW temp AS SELECT roll_no , cs_lang FROM a3_info;
+SHOW TABLES;
+/*
++------------------+
+| Tables_in_view_1 |
++------------------+
+| a3_info          |
+| temp             |
++------------------+
+*/
+SELECT * FROM temp;
 /*
 +---------+---------+
 | roll_no | cs_lang |
@@ -31,7 +48,20 @@ SELECT * FROM veiw_1;
 |      41 | REACT   |
 +---------+---------+
 */
-ALTER VIEW veiw_1 AS SELECT name FROM a3_info;
+UPDATE temp SET cs_lang='ANGULAR' WHERE roll_no=41;
+/*
++---------+---------+
+| roll_no | cs_lang |
++---------+---------+
+|      37 | SQL     |
+|      38 | PYTHON  |
+|      39 | JAVA    |
+|      40 | C++     |
+|      41 | ANGULAR |
++---------+---------+
+*/
+ALTER VIEW temp AS SELECT name FROM a3_info;
+
 /*
 +-----------+
 | name      |
@@ -43,4 +73,5 @@ ALTER VIEW veiw_1 AS SELECT name FROM a3_info;
 | KETAN     |
 +-----------+
 */
+
 
