@@ -29,3 +29,13 @@ SELECT *(EVERYTHING) OR WHATEVER U WANNA SELECT FROM table_name WHERE (CONDITION
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
+
+--DELETING 
+DELETE FROM table_name WHERE condition;
+
+ALTER TABLE table_name ADD COLUMN/DROP column_name ;    --(MANY MORE THINGS CAN BE DONE USING ALTER)
+
+DROP TABLE table_name;
+DROP DATABASE database_name;
+
+
