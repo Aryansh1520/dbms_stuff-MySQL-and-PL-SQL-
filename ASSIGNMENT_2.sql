@@ -157,6 +157,9 @@ SELECT * FROM name RIGHT JOIN submission ON name.roll_no=submission.roll_no;
 |      39 | AKSHAY    |     4 | YXYY     |      39 |
 +---------+-----------+-------+----------+---------+
 */
+--RIGHT TABLE WILL HAVE A KEY OR COLUMN VALUE CORESSPONDING TO THE LEFT TABLE THERFORE NO NULL VALUE IS DISPLAYED;
+
+
 
 
 
