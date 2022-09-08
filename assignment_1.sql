@@ -91,7 +91,7 @@ UPDATE student_info SET submission_status = 'COMPLETED' WHERE roll_no = 31;
 |      32 | DHANASHREE | NA                | DEEPALI      |
 |      33 | UTKARSH    | NA                | DEEPALI      |
 +---------+------------+-------------------+--------------+
-/*
+*/
 
 UPDATE student_info SET submission_status = 'COMPLETED' WHERE name = 'DHANASHREE';
 /*
@@ -196,10 +196,83 @@ UPDATE a_view SET name = 'OM GAWANDE' WHERE name = 'OM';
 DROP VIEW a_view;
 
 
+CREATE TABLE set_1 (emp_id INT,name VARCHAR(30),city VARCHAR(30));
+
+CREATE TABLE set_2 (emp_id INT,name VARCHAR(30),country VARCHAR(30));
+INSERT INTO set_1 VALUES (001,'ASHUTOSH','PUNE');
+INSERT INTO set_1 VALUES (002,'ARYAN','MUMBAI');
+INSERT INTO set_1 VALUES (003,'SARTHAK','SURAT');
+
+INSERT INTO set_2 VALUES (001,'ASHUTOSH','INDIA');
+INSERT INTO set_2 VALUES (002,'ARYAN','UK');
+INSERT INTO set_2 VALUES (003,'SARTHAK','USA');
+INSERT INTO set_2 VALUES (004,'YASH','AUSTRALIA');
 
 
+SELECT * FROM set_1;
+/*
++--------+----------+--------+
+| emp_id | name     | city   |
++--------+----------+--------+
+|      1 | ASHUTOSH | PUNE   |
+|      2 | ARYAN    | MUMBAI |
+|      3 | SARTHAK  | SURAT  |
++--------+----------+--------+
+*/
+SELECT * FROM set_2;
+
+/*
+
++--------+----------+-----------+
+| emp_id | name     | country   |
++--------+----------+-----------+
+|      1 | ASHUTOSH | INDIA     |
+|      2 | ARYAN    | UK        |
+|      3 | SARTHAK  | USA       |
+|      4 | YASH     | AUSTRALIA |
++--------+----------+-----------+
+*/
+SELECT * FROM set_1 UNION SELECT * FROM set_2;
+/*
++--------+----------+-----------+
+| emp_id | name     | city      |
++--------+----------+-----------+
+|      1 | ASHUTOSH | PUNE      |
+|      2 | ARYAN    | MUMBAI    |
+|      3 | SARTHAK  | SURAT     |
+|      1 | ASHUTOSH | INDIA     |
+|      2 | ARYAN    | UK        |
+|      3 | SARTHAK  | USA       |
+|      4 | YASH     | AUSTRALIA |
++--------+----------+-----------+
+
+*/
+SELECT name FROM set_1 UNION SELECT name from set_2;
 
 
-
+/*
++----------+
+| name     |
++----------+
+| ASHUTOSH |
+| ARYAN    |
+| SARTHAK  |
+| YASH     |
++----------+
+*/
+SELECT name FROM set_1 UNION ALL SELECT name from set_2;
+/*
++----------+
+| name     |
++----------+
+| ASHUTOSH |
+| ARYAN    |
+| SARTHAK  |
+| ASHUTOSH |
+| ARYAN    |
+| SARTHAK  |
+| YASH     |
++----------+
+/*
 
 
