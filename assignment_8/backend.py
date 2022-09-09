@@ -3,6 +3,17 @@ from this import d
 from tkinter import EXCEPTION
 import cx_Oracle
 
+'''
+TABLE DESCRIPTION
+
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLL_NO				   NOT NULL NUMBER(PRIMARY KEY)
+ STUDENT_NAME					    VARCHAR2(30)
+ MARKS						        NUMBER
+
+
+'''
 
 
 error_1= ''
