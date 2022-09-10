@@ -33,3 +33,46 @@ BEGIN
 			procedure_1(48,'SARTHAK',750);
 END;
 /
+
+
+/*
+CONSOLE OUTPUT :
+
+Procedure created.
+
+DISTINCTION
+FIRST CLASS
+HIGHER SECOND CLASS
+FAIL
+
+PL/SQL procedure successfully completed.
+*/
+
+
+/*
+
+ACTUAL DATABASES
+
+STUD_MARKS:
+
+NAME			  TOTAL_MARKS
+------------------------- -----------
+ASHUTOSH			 1450
+ARYAN				  950
+ROHAN				  850
+SARTHAK 			  750
+
+
+
+RESULT:
+
+ROLL_NUMBER NAME		      CLASS
+----------- ------------------------- ------------------------------
+	 45 ASHUTOSH		      DISTINCTION
+	 46 ARYAN		      FIRST CLASS
+	 47 ROHAN		      HIGHER SECOND CLASS
+	 48 SARTHAK		      FAIL
+
+*/
+
+
