@@ -195,6 +195,3 @@ up_marks_entry.pack(side=LEFT)
 update_button.pack(side=BOTTOM)
 update_button.place(x = 200,y = 50)
 root.mainloop()
-
-
-conn.close()
