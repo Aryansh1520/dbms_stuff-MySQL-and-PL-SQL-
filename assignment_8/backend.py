@@ -1,8 +1,3 @@
-import imp
-from this import d
-from tkinter import EXCEPTION
-import cx_Oracle
-
 '''
 TABLE DESCRIPTION
 
@@ -14,6 +9,10 @@ TABLE DESCRIPTION
 
 
 '''
+from tkinter import *
+from tkinter.ttk import Treeview
+import cx_Oracle
+
 
 
 error_1= ''
@@ -83,3 +82,28 @@ def update_entry(roll_no,name,marks):
         print(rows[0],'-',rows[1],'-',rows[2],'\n')
     conn.commit()
     c.close()
+
+def show_entries(root,show_frame):
+    
+    columns = ('Roll_no','Name','Marks')
+    trv = Treeview(show_frame,columns=columns,selectmode='browse')
+    trv['show'] = 'headings'
+    trv.column("Roll_no",width=150,anchor='c')
+    trv.column("Name",width=150,anchor='c')
+    trv.column("Marks",width=150,anchor='c')
+    trv.heading('Roll_no', text='Roll no')
+    trv.heading('Name', text='Name')
+    trv.heading('Marks', text='Marks')
+    trv.grid(row=0,column=0,padx=20,pady=20)
+    root.update()
+    try:
+        dsn_tns = cx_Oracle.makedsn('aryan-virtual-machine', '1521', service_name='XE') 
+        conn = cx_Oracle.connect(user=r'aryan_user', password='1520', dsn=dsn_tns)
+        c = conn.cursor()
+        c.execute('SELECT * FROM assignment_7 WHERE ROWNUM <= 10 ORDER BY roll_no')
+        for r in c:
+            trv.insert("",END,values =(r[0],r[1],r[2]))
+    except Exception as e:
+        print(e)
+
+
