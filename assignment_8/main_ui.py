@@ -30,6 +30,10 @@ def back_button():
         back_butt.place_forget()
         frame.pack()
         root.update()
+    elif page_var==5:
+        show_frame.forget()
+        back_butt.place_forget()
+        frame.pack()
 
 def submit_button():
     submit['state'] = DISABLED
@@ -113,6 +117,16 @@ def update_button_command():
     e = b.update_entry(roll_no,name,marks)
     print(e)
 
+def show_data_command(root,show_frame):
+    global page_var
+    page_var = 5
+    frame.forget()
+    show_frame.pack()
+    back_butt.pack()
+    back_butt.place(x = 2,y= 10)
+    a = b.show_entries(root,show_frame)
+    return
+
 
 back_butt = Button(root,text = '<-',command=back_button)
 
@@ -124,9 +138,12 @@ welcome_mess =Label(frame,text = "Welcome!",font=("Arial", 25))
 welcome_mess.pack(side=TOP)
 #welcome_mess.place(x=10,y=0)
 add = Button(frame,text = 'Add Student',command=add_student)
-delete_stu = Button(frame,text='delete student',command=delete_student)
-update = Button(frame,text = 'update student',command=update_page)
-display = Button(frame,text = 'display table')
+delete_stu = Button(frame,text='Delete Student',command=delete_student)
+update = Button(frame,text = 'Update Student',command=update_page)
+display = Button(frame,text = 'Display Table')
+show = Button(frame,text='Show data',command=lambda:show_data_command(root,show_frame))
+show.pack(side=BOTTOM)
+
 
 add_frame = Frame(root,pady=180)
 
@@ -192,6 +209,11 @@ up_roll_no_entry.pack(side=LEFT)
 up_name_entry.pack(side=LEFT)
 up_marks_entry.pack(side=LEFT)
 
+show_frame = Frame(root)
+
+
 update_button.pack(side=BOTTOM)
 update_button.place(x = 200,y = 50)
 root.mainloop()
+
+
