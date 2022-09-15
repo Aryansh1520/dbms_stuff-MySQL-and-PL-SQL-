@@ -49,7 +49,9 @@ Consider Tables:
   8. If condition of fine is true, then details will be stored into fine table.
   
   9. Also handles the exception by named exception handler or user define exception handler.<br/><br/>
+  
 OR<br/>
+
 Write a PL/SQL code block to calculate the area of a circle for a value of radius varying from 5 to
 Store the radius and the corresponding values of calculated area in an empty table named areas,
 consisting of two columns, radius and area.
