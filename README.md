@@ -52,10 +52,39 @@ Consider Tables:
   
 OR<br/>
 
-Write a PL/SQL code block to calculate the area of a circle for a value of radius varying from 5 to
+## Write a PL/SQL code block to calculate the area of a circle for a value of radius varying from 5 to
 Store the radius and the corresponding values of calculated area in an empty table named areas,
 consisting of two columns, radius and area.
 >Note: Instructor will frame the problem statement for writing PL/SQL block in line with above
 >statement.
 <br/><br/>
 
+## Named PL/SQL Block: PL/SQL Stored Procedure and Stored Function.
+Write a Stored Procedure namely proc_Grade for the categorization of student. If marks scored by
+students in examination is <=1500 and marks>=990 then student will be placed in distinction
+category if marks scored are between 989 and 900 category is first class, if marks 899 and 825
+category is Higher Second Class.
+Write a PL/SQL block to use procedure created with above requirement.
+Stud_Marks(name, total_marks) Result(Roll,Name, Class)
+>Note: Instructor will frame the problem statement for writing stored procedure and Function in
+>line with above statement.
+
+## Cursors: (All types: Implicit, Explicit, Cursor FOR Loop, Parameterized Cursor)<br/>
+Write a PL/SQL block of code using parameterized Cursor that will merge the data available in
+the newly created table N_RollCall with the data available in the table O_RollCall. If the data in
+the first table already exist in the second table then that data should be skipped.
+>Note: Instructor will frame the problem statement for writing PL/SQL block using all types of
+>Cursors in line with above statement.
+
+## Database Trigger (All Types: Row level and Statement level triggers, Before and After
+Triggers).<br/>
+Write a database trigger on Library table. The System should keep track of the records that are
+being updated or deleted. The old value of updated or deleted records should be added in
+Library_Audit table.
+>Note: Instructor will Frame the problem statement for writing PL/SQL block for all types of
+>Triggers in line with above statement.
+<br/><br/>
+## Database Connectivity:
+Write a program to implement MySQL/Oracle database connectivity with any front end
+language to implement Database navigation operations (add, delete, edit etc.)
+<br/><br/>
