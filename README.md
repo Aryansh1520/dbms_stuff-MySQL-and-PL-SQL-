@@ -1,4 +1,4 @@
-# DBMS ASSIGNMENTS (WIP)
+# DBMS ASSIGNMENTS (COMPLETED)
 ## ASSIGNMENT 1: ER Modeling and Normalization:<br/><br/>
 Decide a case study related to real time application in group of 2-3 students and formulate a
 problem statement for application to be developed. Propose a Conceptual Design using ER
