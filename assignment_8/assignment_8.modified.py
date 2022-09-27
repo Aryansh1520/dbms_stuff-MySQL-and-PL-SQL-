@@ -82,3 +82,8 @@ while True:
         case '3':
             roll_no,name,marks = map(str,input("ENTER ROLL NO NAME AND MARKS SEPERATED BY SPACE : ").split())
             update_entry(roll_no,name,marks)
+        case '4':
+            dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE') 
+            conn = cx_Oracle.connect(user=r'system', password='1234', dsn=dsn_tns) 
+            c = conn.cursor()
+            c.execute(sql_query,[name,marks,roll_no])
