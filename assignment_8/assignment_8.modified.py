@@ -86,4 +86,6 @@ while True:
             dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='XE') 
             conn = cx_Oracle.connect(user=r'system', password='1234', dsn=dsn_tns) 
             c = conn.cursor()
-            c.execute(sql_query,[name,marks,roll_no])
+            c.execute('SELECT * FROM assignment_7')
+            for r in c:
+                print(r[0],'-',r[1],'-',r[2])
