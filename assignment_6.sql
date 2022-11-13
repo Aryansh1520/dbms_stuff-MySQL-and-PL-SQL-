@@ -17,7 +17,8 @@ c_d VARCHAR2(5);
 cursor c1 (roll NUMBER , n VARCHAR2 , d VARCHAR2) IS SELECT roll_no , COUNT (roll_no),name ,COUNT (name), div, COUNT (div) FROM o_rollcall GROUP BY roll_no,name,div HAVING (COUNT(roll_no)>1) AND (COUNT(name)>1) AND (COUNT(div)>1) ;
 temp  c1%rowtype;
 BEGIN
-	--INSERT INTO n_rollcall SELECT * FROM o_rollcall;
+	DELETE FROM n_rollcall;
+	INSERT INTO n_rollcall SELECT * FROM o_rollcall;
 	OPEN c1(c_r,c_n,c_d);
 	LOOP
 		FETCH c1 INTO temp;
